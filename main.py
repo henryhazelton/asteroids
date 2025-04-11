@@ -13,6 +13,10 @@ def main():
     clock = pygame.time.Clock()
     dt = 0
 
+    group_updatable = pygame.sprite.Group()
+    group_drawable = pygame.sprite.Group()
+    Player.containers = (group_updatable, group_drawable)
+
     x = SCREEN_WIDTH / 2
     y = SCREEN_HEIGHT / 2
 
@@ -23,10 +27,11 @@ def main():
             if event.type == pygame.QUIT:
                 return
             
-        player.update(dt) 
+        group_updatable.update(dt) 
 
         screen.fill("black")
-        player.draw(screen)
+        for thing in group_drawable: 
+            thing.draw(screen)
         pygame.display.flip()
 
         dt = clock.tick(60) / 1000 # Limits the FPS to 60
