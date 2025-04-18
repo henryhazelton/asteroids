@@ -25,11 +25,7 @@ class Player(CircleShape):
         return self.rotation 
     
     def update(self, dt):
-        if self.timer > 0:
-            self.timer -= dt
-        if self.timer < 0:
-            self.timer = 0
-
+        self.timer -= dt
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_a]:
@@ -56,6 +52,9 @@ class Player(CircleShape):
 
     # Method to allow the player to shoot
     def shoot(self):
+        if self.timer > 0:
+            return
+        self.timer = PLAYER_SHOOT_COOLDOWN
         shot = Shot(self.position.x, self.position.y)
         shot.velocity = pygame.Vector2(0, 1).rotate(self.rotation) * PLAYER_SHOT_SPEED # The bullet that will hit the asteroid coming from the direction the player is facing
         
