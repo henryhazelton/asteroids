@@ -28,6 +28,7 @@ def main():
     Player.containers = (updatable, drawable)
     Asteroid.containers = (asteroids, updatable, drawable)
     AsteroidField.containers = (updatable,)
+    Shot.containers = (updatable, drawable, shots)
 
     x = SCREEN_WIDTH / 2
     y = SCREEN_HEIGHT / 2
