@@ -49,8 +49,9 @@ def main():
             if asteriod.collides_with(player):
                 print("Game over!")
                 sys.exit()
+            
             for shot in shots:
-                if shot.collides_with(asteriod):
+                if asteriod.collides_with(shot):
                     shot.kill()
                     asteriod.kill()
 
