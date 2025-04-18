@@ -1,6 +1,6 @@
 from circleshape import *
 from constants import *
-from shoot import Shot
+from shot import Shot
 import pygame
 
 class Player(CircleShape):
@@ -48,7 +48,7 @@ class Player(CircleShape):
 
     # Method to allow the player to shoot
     def shoot(self):
-        shot = Shot(self.position.x, self.position.y, SHOT_RADIUS)
+        shot = Shot(self.position.x, self.position.y)
         shot.velocity = pygame.Vector2(0, 1).rotate(self.rotation) * PLAYER_SHOT_SPEED # The bullet that will hit the asteroid coming from the direction the player is facing
 
         
