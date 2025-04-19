@@ -53,7 +53,7 @@ def main():
             for shot in shots:
                 if asteriod.collides_with(shot):
                     shot.kill()
-                    asteriod.kill()
+                    asteriod.split()
 
         screen.fill("black")
         for obj in drawable: 
