@@ -29,14 +29,13 @@ class Asteroid(CircleShape):
         asteroid_2_velocity_vector = self.velocity.rotate(-random_angle)
 
         # Working out the size of the new asteroids
-        radius_asteroid_1 = old_radius - ASTEROID_MIN_RADIUS
-        radius_asteroid_2 = old_radius - ASTEROID_MIN_RADIUS
+        new_radius_of_asteroid = old_radius - ASTEROID_MIN_RADIUS
 
         # Create the two new asteroid objects
-        asteroid_1 = Asteroid(self.position.x, self.position.y, radius=radius_asteroid_1)
-        asteroid_2 = Asteroid(self.position.x, self.position.y, radius=radius_asteroid_2)
+        asteroid_1 = Asteroid(self.position.x, self.position.y, radius=new_radius_of_asteroid)
+        asteroid_2 = Asteroid(self.position.x, self.position.y, radius=new_radius_of_asteroid)
 
         # Setting the new asteroids velocities
         asteroid_1.velocity = asteroid_1_velocity_vector * 1.2
-        asteroid_2.velocity = asteroid_2_velocity_vector
+        asteroid_2.velocity = asteroid_2_velocity_vector * 1.4
         
