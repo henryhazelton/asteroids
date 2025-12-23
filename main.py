@@ -3,10 +3,11 @@
 # throughout this file
 import sys
 import pygame  # type: ignore
-from constants import *
-from player import *
-from asteroid import *
-from asteroidfield import *
+from constants import SCREEN_HEIGHT, SCREEN_WIDTH
+from player import Player
+from shot import Shot
+from asteroid import Asteroid
+from asteroidfield import AsteroidField
 
 
 def main():
@@ -33,7 +34,7 @@ def main():
     y = SCREEN_HEIGHT / 2
 
     player = Player(x, y)
-    asteroid_field = AsteroidField()
+    # asteroid_field = AsteroidField()
 
     # The Game Loop
     while True:
